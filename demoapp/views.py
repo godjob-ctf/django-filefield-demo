@@ -1,12 +1,9 @@
-from zipfile import ZipFile
-
+from PIL import Image
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.shortcuts import render
 from django.views import View
 
 from demoapp.models import DemoModel
-
-from PIL import Image
 
 
 class DemoView(View):
