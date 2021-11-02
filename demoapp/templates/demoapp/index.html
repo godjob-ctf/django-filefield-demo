@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo Project</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="input_file" accept="image/png">
+        <button type="submit">Submit</button>
+    </form>
+{% if uploaded %}
+    <div>
+        <p>
+            <h2>Input</h2>
+            <img src="{{ input_file.url }}" alt="input">
+        </p>
+        <p>
+            <h2>Processed</h2>
+            <img src="{{ processed_file.url }}" alt="processed">
+        </p>
+    </div>
+{% endif %}
+</body>
+</html>
